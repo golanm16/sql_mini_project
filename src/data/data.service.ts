@@ -17,8 +17,8 @@ export class DataService {
     return this.activityRepo.find();
   }
   async runScript(script: string): Promise<Activity[]> {
-    const connection = await this.ds.initialize();
-    return connection.query(script);
+    // const connection = await this.ds.initialize();
+    return this.ds.query(script);
   }
 
   async insertData(): Promise<string> {
